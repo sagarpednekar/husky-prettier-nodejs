@@ -1,0 +1,42 @@
+<div class="spinner container page-wrap row cat-row" *ngIf="!stories.length">
+    <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+</div>
+
+<div *ngIf="stories.length" class="container page-wrap row cat-row">
+  <div class="sidebar col-3">
+    <h2>What's Hot</h2>
+      <div class="story-list" *ngFor="let story of stories">
+        <a [routerLink]="['/blog']" [queryParams]="{entryId:story.entryId}">
+          <div class="row">
+            <div class="col-5">
+              <img class="custom-img-thumbnail" [src]="getImage(story.image)" alt="" />
+            </div>
+            <div class="col-7">
+              <div class="row">
+                <div class="col">
+                  <h6 class="story-title">{{story.title}}</h6>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <span>{{story.updatedDate | date : "fullDate"}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+    </div>
+  </div>
+  <div class="content col-8">
+    <div class="image">
+      <img [src]="getImage(story.image)" alt="" />
+    </div>
+    <div class="desc">
+      <span class="type">
+        <i class="fa fa-file-text"></i>
+      </span>
+      <h1>{{story.title}}</h1>
+      <p [innerHTML]="story.content"></p>
+    </div>
+  </div>
+</div>
