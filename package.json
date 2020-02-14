@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\"",
-    "precommit":"lint-staged"
+    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\""
   },
-  "lint-staged":{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
     "*.js": [
       "yarn run pretty",
       "git add"
-  ]
-  },
+    ]
+  },          
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
