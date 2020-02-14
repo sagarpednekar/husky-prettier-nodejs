@@ -12,8 +12,7 @@
   },
   "lint-staged": {
     "*.js": [
-      "yarn run pretty",
-      "git add"
+      "yarn run pretty"
     ]
   },          
   "license": "MIT",
