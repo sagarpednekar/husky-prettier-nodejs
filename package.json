@@ -1,0 +1,12 @@
+{
+  "name": "preety-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "pretty": "prettier --write --tab-width 2 \"src/**/*.js\""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
